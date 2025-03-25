@@ -31,7 +31,7 @@ pipeline {
 
         stage("Sonarqube Analysis") {
             steps {
-                sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.url=http://18.215.248.121:9000/ -Dsonar.login=squ_d262230d6e51332d23beabc77cc10dba4dbf4825 -Dsonar.projectName=petclinic -Dsonar.java.binaries=. -Dsonar.projectKey=petclinic'''
+                sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.url=http://18.215.248.121:9000/ -Dsonar.token=squ_d262230d6e51332d23beabc77cc10dba4dbf4825 -Dsonar.projectName=petclinic -Dsonar.java.binaries=. -Dsonar.projectKey=petclinic'''
             }
         }
 
