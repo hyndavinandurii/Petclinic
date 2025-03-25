@@ -23,3 +23,5 @@ pipeline {
                 sh '''mvn sonar:sonar -Dsonar.url=http://34.228.19.42:9000/ -Dsonar.token=squ_d3e13953881a4d09e5cf4ad5325b85fd921a6278 -Dsonar.projectName=petclinic -Dsonar.java.binaries=. -Dsonar.projectKey=petclinic'''
             }
         }
+    }
+}
