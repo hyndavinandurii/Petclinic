@@ -32,10 +32,7 @@ pipeline {
         
         stage("Sonarqube Analysis "){
             steps{
-                withSonarQubeEnv('sonar-server') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Petclinic \
-                    -Dsonar.java.binaries=. \
-                    -Dsonar.projectKey=Petclinic '''
+                sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.url=http://18.215.248.121:9000/ -Dsonar.login=squ_d262230d6e51332d23beabc77cc10dba4dbf4825 -Dsonar.projectName=petclinic -Dsonar.java.binaries=. -Dsonar.projectKey=petclinic'''
     
                 }
             }
@@ -51,7 +48,7 @@ pipeline {
         stage("Docker Build & Push"){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: '4cc3fbcb-f0de-463e-a309-d949b0be6bfc', toolName: 'docker') {
+                   withDockerRegistry(credentialsId: 'f93ee4a8-81aa-477b-8bfd-fd33ea13c151', toolName: 'docker') {
                         
                         sh "docker build -t image1 ."
                         sh "docker tag image1 venkatahyndavi/pet-clinic123:latest "
