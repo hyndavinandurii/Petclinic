@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Change directory
+        run: cd ./Petclinic
 
   compile:
     name: Compile Code
