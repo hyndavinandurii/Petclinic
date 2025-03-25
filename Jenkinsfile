@@ -28,7 +28,7 @@ pipeline {
           steps{
               sh '''$SCANNER_HOME/bin/sonar-scanner \
                     -Dsonar.host.url=http://34.228.19.42:9000 \
-                    -Dsonar.token=squ_d3e13953881a4d09e5cf4ad5325b85fd921a6278 \
+                    -Dsonar.token=squ_005280464873a00bc8a89461e35d520a1bf9ca4e\
                     -Dsonar.projectName=petclinic \
                     -Dsonar.java.binaries=. \
                     -Dsonar.projectKey=petclinic'''
